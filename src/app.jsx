@@ -27,26 +27,7 @@ components.map((item) => {
 });
 
 // ctx dsl
-const dslInstance = new DSL({
-  page: [
-    {
-      id: "Picture_xJ27Wh9O3muw6haQPoKsO",
-      componentName: "Picture",
-      props: {
-        url: "https://img.alicdn.com/imgextra/i3/O1CN01oNV2HE1wltLn3iEtB_!!6000000006349-55-tps-300-200.svg",
-        css: ":root {width:100%;z-index:0;left:0px;top:0px}",
-      },
-    },
-    {
-      id: "Logo_pQj-9HV36c7jzCq-gDafJ",
-      componentName: "Logo",
-      props: {
-        type: "jx",
-        css: ":root {width:129px;z-index:1;left:471px;top:322px}",
-      },
-    },
-  ],
-});
+const dslInstance = new DSL();
 ctx.set("dsl", dslInstance);
 
 class App extends React.Component {

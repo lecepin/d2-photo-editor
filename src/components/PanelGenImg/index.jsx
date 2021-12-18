@@ -17,9 +17,27 @@ class PanelGenImg extends React.Component {
     this.handleOpenDialog = this.handleOpenDialog.bind(this);
     this.handleCloseDialog = this.handleCloseDialog.bind(this);
     this.handleDownload = this.handleDownload.bind(this);
+    this.handleOnKeyGenImg = this.handleOnKeyGenImg.bind(this);
   }
 
-  handleOpenDialog() {
+  componentDidMount() {
+    window.addEventListener("keydown", this.handleOnKeyGenImg);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("keydown", this.handleOnKeyGenImg);
+  }
+
+  handleOnKeyGenImg(e) {
+    const { visible } = this.state;
+    // cmd + S
+    if ((e.ctrlKey || e.metaKey) && e.keyCode == 83 && !visible) {
+      e.preventDefault();
+      this.handleOpenDialog(false);
+    }
+  }
+
+  handleOpenDialog(visible = true) {
     const { ctx } = this.props;
     const hideMsg = message.loading("生成中……");
 
@@ -32,13 +50,17 @@ class PanelGenImg extends React.Component {
         hideMsg();
         this.setState(
           {
-            visible: true,
+            visible,
           },
           () => {
-            this.refPreview.src = canvas.toDataURL();
+            const src = canvas.toDataURL();
 
-            this.refDownloadA.href = this.refPreview.src;
+            this.refDownloadA.href = src;
             this.refDownloadA.download = Date.now() + ".png";
+
+            !visible
+              ? setTimeout(() => this.handleDownload())
+              : (this.refPreview.src = src);
           }
         );
       })
@@ -65,8 +87,10 @@ class PanelGenImg extends React.Component {
     return (
       <div>
         <Button type="primary" onClick={this.handleOpenDialog}>
-          生成图片
+          生成图片(Cmd+S)
         </Button>
+
+        <a ref={(_) => (this.refDownloadA = _)}></a>
 
         <Modal
           title="生成图片"
@@ -79,7 +103,6 @@ class PanelGenImg extends React.Component {
             </Button>,
           ]}
         >
-          <a ref={(_) => (this.refDownloadA = _)}></a>
           <div style={{ textAlign: "center" }}>
             <img
               style={{

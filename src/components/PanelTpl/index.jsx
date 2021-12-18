@@ -11,13 +11,13 @@ class PanelTpl extends React.Component {
       {
         title: "横向照片",
         value:
-          '{"page":[{"id":"Picture_xJ27Wh9O3muw6haQPoKsO","componentName":"Picture","props":{"url":"https://img.alicdn.com/imgextra/i3/O1CN01oNV2HE1wltLn3iEtB_!!6000000006349-55-tps-300-200.svg","css":":root {width:100%;z-index:0;left:0px;top:0px}"}},{"id":"Logo_pQj-9HV36c7jzCq-gDafJ","componentName":"Logo","props":{"type": "jx","css":":root {width:129px;z-index:1;left:471px;top:322px}"}}]}',
+          '{"page":[{"id":"Picture_xJ27Wh9O3muw6haQPoKsO","componentName":"Picture","props":{"url":"https://img.alicdn.com/imgextra/i3/O1CN01oNV2HE1wltLn3iEtB_!!6000000006349-55-tps-300-200.svg","css":":root {width:600px;z-index:0;left:0px;top:0px}"}},{"id":"Logo_pQj-9HV36c7jzCq-gDafJ","componentName":"Logo","props":{"type":"jx","css":":root {width:129px;z-index:1;left:449px;top:290px}"}}]}',
         canDel: false,
       },
       {
         title: "纵向照片",
         value:
-          '{"page":[{"id":"Picture_MarA0CsrJqB4bUGRkIRKi","componentName":"Picture","props":{"url":"https://img.alicdn.com/imgextra/i4/O1CN01N0gbIu1a6Hp83Ytej_!!6000000003280-55-tps-200-300.svg","css":":root {width:400px;z-index:0;left:0px;top:0px}"}},{"id":"Logo_3Lrzrwj_iKJqPIouRipMt","componentName":"Logo","props":{"type": "jx","css":":root {width:129px;z-index:2;left:271px;top:522px}"}}]}',
+          '{"page":[{"id":"Picture_MarA0CsrJqB4bUGRkIRKi","componentName":"Picture","props":{"url":"https://img.alicdn.com/imgextra/i4/O1CN01N0gbIu1a6Hp83Ytej_!!6000000003280-55-tps-200-300.svg","css":":root {width:400px;z-index:0;left:0px;top:0px}"}},{"id":"Logo_3Lrzrwj_iKJqPIouRipMt","componentName":"Logo","props":{"type":"jx","css":":root {width:129px;z-index:2;left:271px;top:498px}"}}]}',
         canDel: false,
       },
     ],

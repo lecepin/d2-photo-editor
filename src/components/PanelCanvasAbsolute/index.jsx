@@ -295,6 +295,7 @@ class PanelCanvasAbsolute extends React.Component {
 
     if (!this.componentInstance.get(id)) {
       this.currentSelect = null;
+      this.refSelectGhost.setNode(null);
       return;
     }
 
